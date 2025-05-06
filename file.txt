@@ -1,0 +1,302 @@
+Version control System (VCS) :
+Version : Helps to track the changes happening to a software/code over the period of time.
+Type of Version Control System :
+1.	Local VCS (SCCS)
+2.	Centralized VCS (SVN/TFS/CVS)
+3.	Distributed VCS (GITHUB/GIT LAB/BIT BUCKET)
+
+1.Local VCS (SCCS) :
+•	We can loose the all version tracking change when developer machine crashes.
+•	Version tracking only on Developer machines.
+•	Collaboration between multiple developer is not possible
+•	Below mentioned diagram we have installed the SCSS tool in the developer machine.
+
+ 
+2.Centralized VCS (SVN/TFS/CVS):
+•	Version tracking happening only one remote machine.
+•	Collaboration problem is solved.
+•	If we loose the remote server then a chance to loose the version tracking.
+
+ 
+
+3.Distributed VCS (GIT HUB/GIT LAB/BIT BUCKET) :
+•	Version tracking happens in remote and developer machines.
+•	Dev make change in local and then push to remote machine when needed.
+ 
+
+
+
+GIT Commands :
+
+Git is a DevOps tool used for source code management/Version Control system. It is a free and open-source version control system used to handle small to very large projects efficiently.
+
+ Project Name : Todayproject_04052023
+Note : We need to the create our project directory. Enter into the directory and work on that directory
+git init   	=====> To initialize the local git repositery
+git status	=====> To get the status 	
+Explanation : Create the project directory and change that particular direction after on words need to run the git init command below screen shot I create the Todayproject_04052023 directory and git init run.
+ 
+=================================
+How to add the user in Git
+Command : git config --global user.name <username>
+Ex : git config --global user.name siva
+=====================================
+How to add the user mail id in Git
+Command : git config --global user.email <maild id>
+Ex : git config --global user.email siva@gmail.com
+======================================
+List out the  Users and Email id’s
+git config --global –list
+
+ 
+======================================
+How to add/Commit the new file or modified file in Git
+Create/Modify the files in the project directory.
+Command : git add <file Name>
+Ex : git add application.txt
+
+[root@ip-172-31-41-212 FIRST_PROJECT]# git add application.txt
+
+Once add the file need to commit.
+Command : git commit -m "some content"
+Ex :  git commit –m “application file created”
+ 
+======================================================== 
+How to get the Logs for after commit the file :
+Command : git log
+Ex : git log
+ 
+
+Note : HEAD is the recent commit ID
+=======================================================================
+
+How to add the modified/added/deleted content in file with git.
+
+Step 1: First modify the data.
+vi property.txt
+Step 2: check the git status and if modified file not added into the git. It will says changes not staged for commit (staged means add stage)
+ 
+Step 3: add the file in git after modified/added/deleted content in file 
+
+Command : git add <filename> 
+git add application.txt
+
+Step 3: Commit the file in git
+Command : git commit -m "some content"
+
+Ex : git commit –m “modified the application file”
+ 
+
+Step 4: Get the logs in git using below command 
+Command : git log
+In the below screen shot output got created the application file and after that modified the application file. Both details we got.
+ 
+=======================================
+How to get the commit ID details.
+Commit Id is unique id for all changes . When ever we changes in the project after commit we will git every commit id.Using commit Id we can get the change details  
+Command : git show <commit ID>
+
+Ex : 
+ 
+==================================================
+
+How to add the multiple files in git
+Command : git add .
+Ex : git add .
+How to revert the any changes in git.
+For example I have created the new file name is today.txt and modified the existing file.
+Command : git revert <commit ID>
+Ex : 
+ 
+
+Note : while reverting the changes in git this one also create the commit id.
+In the above screen shot 
+How to get the logs out put in one line.
+Command : git log --oneline
+Ex : git log –oneline
+Command : git log –n 3 --author siva
+How to create the tag
+Commannd : git tag -a <Version number> -m <some content>
+
+How to delete the tag 	
+Command : git tag –d <tag name>
+Ex : git tag –d V_3.1
+How to check the server connected to remote repository.
+Command : git remote –v
+
+Scenario-1 : How to add the repository in local server.
+Step 1: Login the git and create the repository 
+Step 2: Copy the push existing url in git.
+ 
+Step 3: Login to the local server and check the existing repository.
+Command : git remote –v
+Step 4: Add the repository in local server using below command.
+Command : 
+git remote add <alias name> <url> 
+Ex : 
+git remote add origin https://github.com/MSivaP/Todayproject_05042023.git
+ 
+Step 5: After adding repository in local server we need to change the branch name 
+Command : git branch –M <branch Name>
+Ex : git branch –M main
+
+Scenario 2: How to push local project data in repository.
+Here : repository alias name is : origin   Branch Name is : siva
+
+Step 1: check the repository name and branch name in local server.
+Command : git remote –v     ========> checking the repository alias name
+Command : git branch       ========> checking the branch name 
+Step 2: Push the data into repository and use below command.
+Command : git push –u <alias name of repository> <Branch Name>
+Here we will user name and password(token value need to enter) 
+Ex : 
+ 
+
+How to push tags local to repository?
+Here : 
+Repository alias name is : origin
+Branch Name is : main
+Step 1: Login to the local server(Machine)
+Step 2: Run below command 
+Command : git push –u <alias name> <branch name> --tags
+Ex :  
+
+How to push the data without password less in git.
+
+ 
+
+How to pull the repository data into the new developer server?
+For the first time need to use clone command.
+Command : git clone <repository Url>
+
+
+What is fork and clone
+Fork : It is a copy in remote server from my account to another account
+Clone : It is a copy of our project from remote server to local server.
+
+What is difference git fetch and git pull.
+Git fetch only update in the .git references
+Git pull will update the changes local changes and git references.
+What is branch and to check all the branches in remote as well local.
+In Git, a branch is a new/separate version of the main repository.
+git branch  ===== > to show only local branches
+git branch –r ==== > to show all remote branches
+git branch –a == > to see the local and remote branch list.
+git branch <branch name> ==== > create the branch in the local server.
+git checkout –b <branch name> === > create the branch name and switch to that branch 
+Ex : git checkout –b test_2 ==== > to create the test_2 branch and switch test_2 branch.
+git branch –d <branch name> ==== > To delete the branch 
+git pull == > to download remote branches in the local server.
+Note : current running we can delete some other we can delete
+git branch –D <branch name> ==== > to delete the branch forcefully
+How to create branch while checkout? 
+git checkout -b  <branch name>
+How do you rename the local branch? 
+git branch –m <old branch name> <new branch name>
+How to see the difference between 2 commits?
+CMD : git diff <commit-id-1> <commit-id-2>
+When file have staging area or file have committed if file is deleted in local repository unfortunately how to get back that file to staging area? 
+CMD : git checkout <file Name>
+
+GIT MERGE : 
+Git merge means  we can combine the two branches.
+git merge <source branch name>
+Note : we should  be in target branch .
+
+What is git conflict? What is the scenario you will get git conflict error?
+For example, if you and another person both edited the same file on the same lines in different branches of the same Git repository, you'll get a merge conflict error when you try to merge these branches. You must resolve this merge conflict with a new commit before you can merge these branches. 
+How do you resolve merge conflict? 
+Will inform the developers regarding this merge conflict. They will change the code and inform us. edit the files to fix the conflicting changes and then add & commit.
+
+Build code : converting the source into the deployable / installable format.
+We can not use the source code for deploying in the server level .We need to convert the source into build code and then we can deploy the build code in the server.
+
+How to Build code : We have  build tools.
+	Java --- Maven/ant/gradle
+	.net  -- ms build
+	Python – pybuild
+
+
+
+
+What are the various steps/stages involved in build code process?
+i.	Mvn compile --- > Converting the high level lan to machine level language
+ii.	Mvn code review -- > validating the code and check the mistakes in the code.
+iii.	Mvn unittest -- > individual code testing (classes,functions) tested by developer.
+iv.	Mvn code coverage --- > % to code coverage under testing.
+v.	Mvn package  -- > In this stage we can convert the source code into the deployable or installable format.
+
+Who perform the build code stages  Build tools like mvn, perform the above stages.
+	Automate the above the thing with help of Jenkins :
+	Jenkins tool can help to automate the build code process
+	Jenkins is known as build code process / Continuous integration server.
+	Build code process called as continuous integration process (CI process)
+PIPE LINE :
+	If run the above stages in build codes process in sequence order without manual intervention then it call as PIPE LINE.
+	Build code process === Continuous Integration process =  CI PIPE LINE
+
+How to build the source code into build code format using mvn manually.
+Step 1: Download the source code from Git or dev team will share the source code.
+Step 2: Perform the mvn compiler using mvn compile command.
+Mvn compile
+Step 3: Perform the mvn unit test using mvn test command.
+Mvn test
+Step 4: Build the source code into build code using mvn package command.
+Mvn package 
+Note : Go to inside the source code directory and then form the all above stages.
+
+How to convert the source code into build code using Jenkins CI pipe line.
+Step 1: Install the jdk package (For Ubuntu os use below mentioned commands)
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install -y fontconfig openjdk-11-jre openjdk-11-jdk
+
+Step 2: install the maven.
+cd /tmp ; sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+cd /tmp ; sudo tar -xzf apache-maven-3.9.4-bin.tar.gz -C  /opt/
+mv /opt/apache-maven-3.9.4 /opt/maven
+sudo echo "MAVEN_HOME=\"/opt/maven\"" >> /etc/profile
+sudo echo "PATH=\$MAVEN_HOME/bin:\$PATH" >> /etc/profile
+source /etc/profile
+
+Step 3:  Install the Jenkins
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+sudo echo "MAVEN_HOME=\"/opt/apache-maven-3.8.5\"" >> /etc/profile
+sudo echo "JAVA_HOME=\"/usr/lib/jvm/java-8-openjdk-amd64\"" >> /etc/profile 
+sudo echo "PATH=\$JAVA_HOME/bin:\$MAVEN_HOME/bin:\$PATH" >> /etc/profile
+source /etc/profile
+
+
+Step 5: Restart the Jenkins service using systemctl command.
+Systemctl restart Jenkins
+Step 6: Take server public ip and use search the below mentioned url in chrome
+http://serverippublicip:8080
+Step 7: 
+
+How to set pipe line for convert the source code into build code.
+Step 1: Compile the source code using Jenkins tool.
+Step 2: Code review 
+mvn --version
+git --version
+/opt/maven/bin/mvn –P metrices pmd:pmd
+Step 3: Unit test
+Mvn test
+Postbuild  select the 
+Step 4: code coverage
+Mvn verify
+Postbuild  select the jacoco plugins.
+Step 5: code package 
+Mvn package
+Step 6: Kindly do the below mentioned changes in all build formats.
+select the unittest  configure  build triggers  Build after other projects are built  select the compile and then save
+select the codecoverage  configure  build triggers  Build after other projects are built  select the unittest and then save
+select the package  configure  build triggers  Build after other projects are built  select the codecoverage and then save
+
+Step7: Go to home page and then select the create the pipe line using ‘+’ symbol then 
+NEW view  select the type Build pipe line  create the new pile line  select the initial job here need to select the compile 
+
